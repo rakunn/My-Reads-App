@@ -24,7 +24,7 @@ class BooksApp extends React.Component {
 
   updateBooks = (book) => {
     this.setState((state) => ({
-      books: state.books.filter((el) => el !== book)
+      books: state.books.filter((el) => el !== book).concat( [book] )
     }))
   }
 
@@ -56,7 +56,7 @@ class BooksApp extends React.Component {
         ) : (
           <div className="list-books">
             <ListTitle />
-            <ListBooks books={this.state.books} test={this.updateBooks}/>
+            <ListBooks books={this.state.books} updateBooks={this.updateBooks}/>
             <div className="open-search">
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>

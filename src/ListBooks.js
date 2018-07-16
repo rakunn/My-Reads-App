@@ -24,7 +24,7 @@ class ListBooks extends Component {
       <div className="list-books-content">
         <div>
           {shelfs.map((shelf) => (
-            <BookShelf books={this.props.books} currentShelf={shelf.status} title={shelf.title} key={shelf.title} test={this.props.test}/>
+            <BookShelf books={this.props.books} currentShelf={shelf.status} title={shelf.title} key={shelf.title} updateBooks={this.props.updateBooks}/>
           ))}
         </div>
       </div>

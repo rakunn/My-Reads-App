@@ -15,7 +15,7 @@ class BookShelf extends Component {
         <div className="bookshelf-books">
           <ol className="books-grid">
           {(sortedBooks).map(book => (
-            <Book key={book.id} title={book.title} authors={book.authors} element={book} image={book.imageLinks.thumbnail} test={this.props.test} />
+            <Book key={book.id} title={book.title} authors={book.authors} currentBook={book} image={book.imageLinks.thumbnail} updateBooks={this.props.updateBooks} />
           ))}
           </ol>
         </div>
