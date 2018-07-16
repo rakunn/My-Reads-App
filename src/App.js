@@ -21,6 +21,7 @@ class BooksApp extends React.Component {
     this.setState({ books })
   })
   }
+
   updateBooks = (book) => {
     this.setState((state) => ({
       books: state.books.filter((el) => el !== book)
@@ -54,8 +55,6 @@ class BooksApp extends React.Component {
           </div>
         ) : (
           <div className="list-books">
-            <button onClick={this.updateBooks}>update books</button>
-            <button onClick={this.test}>dodaj</button>
             <ListTitle />
             <ListBooks books={this.state.books} test={this.updateBooks}/>
             <div className="open-search">
