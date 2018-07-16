@@ -2,14 +2,21 @@ import React, { Component } from 'react'
 import Book from './Book'
 
 class BookShelf extends Component {
+
   render() {
+
+    const books = this.props.books;
+    const currentShelf = this.props.currentShelf;
+    const sortedBooks = books.filter((book) => currentShelf === book.shelf)
+
     return(
       <div className="bookshelf">
-        <h2 className="bookshelf-title">Currently Reading</h2>
+        <h2 className="bookshelf-title">{this.props.title}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            <Book />
-            <Book />
+          {(sortedBooks).map(book => (
+            <Book key={book.id} title={book.title} authors={book.authors} element={book} image={book.imageLinks.thumbnail} test={this.props.test} />
+          ))}
           </ol>
         </div>
       </div>
