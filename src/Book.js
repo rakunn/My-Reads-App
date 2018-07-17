@@ -17,7 +17,7 @@ class Book extends Component {
                 backgroundImage: `url(${this.props.image})`
               }}
             />
-            <ButtonChange currentBook={this.props.currentBook} updateBooks={this.props.updateBooks} />
+            <ButtonChange currentBook={this.props.currentBook} updateBooks={this.props.updateBooks} defaultShelf = {this.props.defaultShelf} />
           </div>
           <div className="book-title">{this.props.title}</div>
           <div className="book-authors">{this.props.authors}</div>
