@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
-import ButtonChange from './ButtonChange'
+import React, { Component } from "react";
+import ButtonChange from "./ButtonChange";
 
 class Book extends Component {
-
   render() {
-
-    return(
+    return (
       <li>
         <div className="book">
           <div className="book-top">
@@ -17,13 +15,18 @@ class Book extends Component {
                 backgroundImage: `url(${this.props.image})`
               }}
             />
-            <ButtonChange currentBook={this.props.currentBook} updateBooks={this.props.updateBooks} defaultShelf = {this.props.defaultShelf} />
+            <ButtonChange
+              currentBook={this.props.currentBook}
+              updateBooks={this.props.updateBooks}
+              defaultShelf={this.props.defaultShelf}
+              books={this.props.books}
+            />
           </div>
           <div className="book-title">{this.props.title}</div>
           <div className="book-authors">{this.props.authors}</div>
         </div>
       </li>
-    )
+    );
   }
 }
-export default Book
+export default Book;
