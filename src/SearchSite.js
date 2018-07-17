@@ -10,16 +10,15 @@ class SearchSite extends Component {
   };
 
   handleInput = e => {
-    let searchQuery = e.target.value
-    this.setState( {query: searchQuery} )
-  }
+    let searchQuery = e.target.value;
+    this.setState({ query: searchQuery });
+  };
 
-  addBooks = (query) => {
+  addBooks = query => {
     BooksAPI.search(query)
-      .then(books => { 
+      .then(books => {
         if (!books.error) {
           books.forEach(book => {
-
             let booksOnShelfs = this.props.books;
             for (let i = 0; i < booksOnShelfs.length; i++) {
               let searchBook;
@@ -32,9 +31,8 @@ class SearchSite extends Component {
             }
             return books;
           });
-          
         } else {
-          books = []
+          books = [];
         }
         return books;
       })
@@ -44,11 +42,10 @@ class SearchSite extends Component {
   };
 
   render() {
-
     const defaultShelf = "none";
 
-    if(this.state.query) {
-      this.addBooks(this.state.query)
+    if (this.state.query) {
+      this.addBooks(this.state.query);
     }
 
     return (
@@ -58,7 +55,11 @@ class SearchSite extends Component {
             Close
           </Link>
           <div className="search-books-input-wrapper">
-            <input type="text" placeholder="Search by title or author" onChange={this.handleInput} />
+            <input
+              type="text"
+              placeholder="Search by title or author"
+              onChange={this.handleInput}
+            />
           </div>
         </div>
         <div className="search-books-results">
