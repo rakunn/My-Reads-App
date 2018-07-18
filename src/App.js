@@ -27,7 +27,7 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
         <Route
-          path="/search"
+          path={process.env.PUBLIC_URL + "/search"}
           render={() => (
             <SearchSite
               books={this.state.books}
@@ -38,7 +38,7 @@ class BooksApp extends React.Component {
 
         <Route
           exact
-          path="/"
+          path={process.env.PUBLIC_URL + "/"}
           render={() => (
             <div className="list-books">
               <div className="list-books-title">
@@ -49,7 +49,7 @@ class BooksApp extends React.Component {
                 updateBooks={this.updateBooks}
               />
               <div className="open-search">
-                <Link to="/search">Add a book</Link>
+                <Link to={process.env.PUBLIC_URL + "/search"}>Add a book</Link>
               </div>
             </div>
           )}
