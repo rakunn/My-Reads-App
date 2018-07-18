@@ -11,7 +11,7 @@ class SearchSite extends Component {
 
   handleInput = e => {
     let searchQuery = e.target.value;
-    this.setState({ query: searchQuery });
+    this.setState({ query: searchQuery.trim() });
   };
 
   addBooks = query => {
@@ -73,7 +73,7 @@ class SearchSite extends Component {
               <Book
                 key={book.id}
                 title={book.title}
-                authors={book.authors}
+                authors={book.authors ? book.authors : ""}
                 currentBook={book}
                 image={book.imageLinks ? book.imageLinks.thumbnail : ""}
                 updateBooks={this.props.updateBooks}

@@ -16,7 +16,7 @@ class BookShelf extends Component {
               <Book
                 key={book.id}
                 title={book.title}
-                authors={book.authors}
+                authors={book.authors ? book.authors : ""}
                 currentBook={book}
                 image={book.imageLinks ? book.imageLinks.thumbnail : ""}
                 updateBooks={this.props.updateBooks}

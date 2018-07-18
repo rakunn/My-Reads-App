@@ -14,7 +14,5 @@ Each book has a control that lets select the shelf. Default value for the contro
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
-Or visit the live version of the app: https://klaraborowska.github.io/My-Reads-App/
-
 #### Code Dependencies
 Game was based on the Udacity starter code https://github.com/udacity/reactnd-project-myreads-starter
