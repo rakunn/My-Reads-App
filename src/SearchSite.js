@@ -34,6 +34,11 @@ class SearchSite extends Component {
         } else {
           books = [];
         }
+
+        if (this.state.query === "") {
+          books = [];
+        }
+
         return books;
       })
       .then(books => {
